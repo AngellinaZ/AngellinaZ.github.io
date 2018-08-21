@@ -80,12 +80,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="AngellinaZ&#39;s 大鱼">
+<meta property="og:title" content="大鱼">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="AngellinaZ&#39;s 大鱼">
+<meta property="og:site_name" content="大鱼">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AngellinaZ&#39;s 大鱼">
+<meta name="twitter:title" content="大鱼">
 
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <title>AngellinaZ's 大鱼</title>
+  <title>大鱼</title>
   
 
 
@@ -152,7 +152,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">AngellinaZ's 大鱼</span>
+        <span class="site-title">大鱼</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -183,16 +183,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
           </a>
         </li>
       
@@ -254,11 +244,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AngellinaZ">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AngellinaZ's 大鱼">
+      <meta itemprop="name" content="大鱼">
     </span>
 
     
@@ -319,89 +309,14 @@
 
       
         
-          
-            <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h3 id="文本溢出"><a href="#文本溢出" class="headerlink" title="文本溢出"></a>文本溢出</h3><ol>
-<li><p>单行文本溢出显示 </p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>多行文本溢出显示<br>适用范围： 因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端；</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>:  <span class="selector-tag">-webkit-box</span>;</span><br><span class="line"><span class="selector-tag">-webkit-box-orient</span>: <span class="selector-tag">vertical</span>;</span><br><span class="line">  -webkit-line-clamp: 3; //文本行数</span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="让图文不可复制"><a href="#让图文不可复制" class="headerlink" title="让图文不可复制"></a>让图文不可复制</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">user-select</span>: <span class="selector-tag">none</span>;</span><br><span class="line"><span class="selector-tag">-webkit-user-select</span>: <span class="selector-tag">none</span>;</span><br><span class="line"><span class="selector-tag">-ms-user-select</span>: <span class="selector-tag">none</span>;</span><br><span class="line"><span class="selector-tag">-moz-user-select</span>: <span class="selector-tag">none</span>;</span><br><span class="line"><span class="selector-tag">-khtml-user-select</span>: <span class="selector-tag">none</span>;</span><br></pre></td></tr></table></figure>
-<p>复制的文本 都会被加上一段来源说明:</p>
-<blockquote>
-<p>思路</p>
-<ol>
-<li>监听copy事件，并阻止这个事件的默认行为</li>
-<li>获取选中的内容window.getSelection(), 加上版权信息, 然后设置到剪切clipboarddata.setData()</li>
-</ol>
-</blockquote>
-<h3 id="css常用布局"><a href="#css常用布局" class="headerlink" title="css常用布局"></a>css常用布局</h3><ol>
-<li><p>标准盒模型 和 IE怪异盒模型: width是否包含padding和border值 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  解决方法：设置属性 box-sizing: content-box || border-box(怪异模式) || inherit;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>定位布局： </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position：absolute / relative / fixed / static</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>流布局: 正常布局</p>
-</li>
-<li><p>浮动布局： 如何清除浮动？ </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfloat</span> &#123;<span class="attribute">clear</span>: both &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.clearfloat</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">   <span class="attribute">display</span>:block;</span><br><span class="line">   <span class="attribute">clear</span>:both;</span><br><span class="line">   <span class="attribute">content</span>:<span class="string">""</span>;</span><br><span class="line">   <span class="attribute">visibility</span>:hidden;</span><br><span class="line">   <span class="attribute">height</span>:<span class="number">0</span>; </span><br><span class="line"> &#125;  </span><br><span class="line"> .clearfloat&#123;zoom:1&#125; // IE浏览器 zoom: 1 属性能清除浮动</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>flex布部: 一维布局, align-items(交叉轴) justify-content(主轴)</p>
-</li>
-<li>grid布局：二维布局</li>
-<li>圣杯布局 和 双飞翼布局： 两边定宽，中间自适应的三栏布局，中间栏要放在文档流前面以优先渲染。<a href="https://github.com/AngellinaZ/blog/blob/master/examples/%E5%9C%A3%E6%9D%AF%2C%E5%8F%8C%E9%A3%9E%E7%BF%BC.html" target="_blank" rel="noopener">代码</a><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main-wrap"</span>&gt;</span></span><br><span class="line">		#main</span><br><span class="line">	    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span></span><br><span class="line">	#left</span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span></span><br><span class="line">	#right</span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="盒子垂直水平居中"><a href="#盒子垂直水平居中" class="headerlink" title="盒子垂直水平居中"></a>盒子垂直水平居中</h3><ol>
-<li>盒子宽高已知：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">height</span>: 50<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">line-height</span>: 50<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>或者：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line"><span class="selector-tag">top</span>: 50%;</span><br><span class="line"><span class="selector-tag">left</span>: 50%;</span><br><span class="line"><span class="selector-tag">margin-left</span>: 自身一半宽度;</span><br><span class="line"><span class="selector-tag">margin-top</span>: 自身一半高度;</span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li><p>子盒子 宽高不定时： </p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">position: relative / absolute;</span><br><span class="line">   <span class="comment">/*top和left偏移各为50%*/</span></span><br><span class="line"><span class="selector-tag">top</span>: 50%;</span><br><span class="line"><span class="selector-tag">left</span>: 50%;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">/*translate(-50%,-50%) 偏移自身的宽和高的-50%*/</span></span><br><span class="line"><span class="comment">/*注意这里启动了3D硬件加速: 会增加耗电量的*/</span></span><br><span class="line">   <span class="selector-tag">transform</span>: <span class="selector-tag">translate</span>(<span class="selector-tag">-50</span>%, <span class="selector-tag">-50</span>%);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>flex 布局</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">/*父*/</span></span><br><span class="line">   <span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/*子*/</span></span><br><span class="line">   <span class="selector-tag">align-items</span>: <span class="selector-tag">center</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">center</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="改变placeholder的字体颜色大小"><a href="#改变placeholder的字体颜色大小" class="headerlink" title="改变placeholder的字体颜色大小"></a>改变placeholder的字体颜色大小</h3><p>仅用于PC端<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;  </span><br><span class="line">   <span class="comment">/* WebKit browsers /  </span></span><br><span class="line"><span class="comment">   font-size:14px; </span></span><br><span class="line"><span class="comment">   color: #333; </span></span><br><span class="line"><span class="comment">&#125;  </span></span><br><span class="line"><span class="comment">input::-moz-placeholder &#123;  </span></span><br><span class="line"><span class="comment">  / Mozilla Firefox 19+ /  </span></span><br><span class="line"><span class="comment">  font-size:14px; </span></span><br><span class="line"><span class="comment">  color: #333; </span></span><br><span class="line"><span class="comment">&#125;  </span></span><br><span class="line"><span class="comment">input:-ms-input-placeholder &#123;  </span></span><br><span class="line"><span class="comment">  / Internet Explorer 10+ */</span>  </span><br><span class="line">  <span class="attribute">font-size</span>:<span class="number">14px</span>; </span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="BFC-块级格式化上下文"><a href="#BFC-块级格式化上下文" class="headerlink" title="BFC (块级格式化上下文)"></a>BFC (块级格式化上下文)</h3><p>触发条件： </p>
-<ol>
-<li>float 的值不为 none</li>
-<li>overflow: auto / scroll / hidden</li>
-<li>display: table-cell / table-caption / inline-block</li>
-<li>position 的值不为 relative 和 static</li>
-</ol>
-<h3 id="cookies-session-sessionStorage-localStorage"><a href="#cookies-session-sessionStorage-localStorage" class="headerlink" title="cookies, session, sessionStorage, localStorage"></a>cookies, session, sessionStorage, localStorage</h3><ol>
-<li><p>Cookies是保存在客户端的小段文本(4kb)，随客户端请求发送该url下的所有cookies到服务器端，在浏览器和服务器间来回传递。同源共享。有效期为expire之前。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cookie属性: </span><br><span class="line">  domain: 访问cookie的域名。</span><br><span class="line">  expires/Max-Age: cookie超时时间。若设置其值为一个时间，当到达此时间cookie失效。不设置默认值是Session，意思是cookie会和session一起失效。当浏览器关闭(不是浏览器标签页，而是整个浏览器) 后，此cookie失效。</span><br><span class="line">  Size: cookie大小。</span><br><span class="line">  http: cookie的httponly属性。若此属性为true，则只有在http请求头中会带有此cookie的信息，而不能通过document.cookie来访问此cookie。</span><br><span class="line">  secure: 设置是否只能通过https来传递此条cookie</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Session则保存服务器段，通过唯一的值sessionID来区别每一个用户。SessionID随每个请求发送到服务器，服务器根据sessionID来识别客户端，再通过session 的key获取session值。SessionID传回服务器的实现方式可以通过cookies和url回写来实现。</p>
-</li>
-<li><p>sessionStorage（会话存储）是在同源的同窗口（或tab）中，始终存在的数据。只要这个浏览器窗口没有关闭，即使刷新页面或进入同源另一页面，数据仍然存在。关闭窗口后，sessionStorage即被销毁。同时“独立”打开的不同窗口，即使是同一页面，sessionStorage对象也是不同的。</p>
-</li>
-<li><p>localStorage（本地存储）始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据，并可用于所有同源（相同的域名、协议和端口）窗口（或标签页）。</p>
-</li>
-</ol>
-<h3 id="前端安全问题-建议参考"><a href="#前端安全问题-建议参考" class="headerlink" title="前端安全问题: 建议参考"></a>前端安全问题: <a href="https://www.jianshu.com/p/e6b7b097896e" target="_blank" rel="noopener">建议参考</a></h3><ol>
-<li>XSS: 跨站脚本攻击（Cross-Site Scripting）</li>
-<li>警惕iFrame带来的风险</li>
-<li>别被点击劫持了</li>
-<li>错误的内容推断</li>
-<li>防火防盗防猪队友：不安全的第三方依赖包</li>
-<li>用了HTTPS也可能掉坑里</li>
-<li>本地存储数据泄露</li>
-<li>缺失静态资源完整性校验</li>
-</ol>
-<h3 id="animation-与-transition"><a href="#animation-与-transition" class="headerlink" title="animation 与 transition"></a>animation 与 transition</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation</span>：<span class="selector-tag">mymove</span> 5<span class="selector-tag">s</span> <span class="selector-tag">infinite</span>; </span><br><span class="line">@<span class="keyword">keyframes</span> mymove</span><br><span class="line">&#123;</span><br><span class="line"><span class="selector-tag">from</span> &#123;<span class="attribute">left</span>:<span class="number">0px</span>;&#125;</span><br><span class="line"><span class="selector-tag">to</span> &#123;<span class="attribute">left</span>:<span class="number">200px</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">transition</span><span class="selector-pseudo">:width</span> 2<span class="selector-tag">s</span>;</span><br></pre></td></tr></table></figure>
-<p>区别：</p>
-<p>为什么动画推荐用c3而不是js :原生的CSS过渡在客户端需要处理的资源要比用JavaScript和Flash少的多<br>浏览器怎么优化的动画</p>
-<h3 id="浏览器查抄的过程。"><a href="#浏览器查抄的过程。" class="headerlink" title="浏览器查抄的过程。"></a>浏览器查抄的过程。</h3>
-          
+          <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/15/hello-blog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -453,11 +368,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AngellinaZ">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AngellinaZ's 大鱼">
+      <meta itemprop="name" content="大鱼">
     </span>
 
     
@@ -599,7 +514,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.gif"
+                src="/images/avatar.jpg"
                 alt="AngellinaZ" />
             
               <p class="site-author-name" itemprop="name">AngellinaZ</p>
@@ -622,11 +537,36 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
 
           </nav>
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/AngellinaZ" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:AngellinaZ_zyp@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
           
 
           
