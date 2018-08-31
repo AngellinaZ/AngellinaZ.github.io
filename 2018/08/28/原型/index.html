@@ -90,7 +90,8 @@
 <meta property="og:image" content="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype2.png">
 <meta property="og:image" content="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype3.png">
 <meta property="og:image" content="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype5.png">
-<meta property="og:updated_time" content="2018-08-29T08:16:00.652Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/28/原型/2.jpg">
+<meta property="og:updated_time" content="2018-08-31T08:35:40.831Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型">
 <meta name="twitter:description" content="概括： 通过阅读小红书和冴羽的合集，了解掌握原型及原型链">
@@ -318,7 +319,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  949
+                  1,158
                 </span>
               
 
@@ -334,7 +335,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -356,37 +357,30 @@
 
       
         <p><img src="/2018/08/28/原型/1.png" alt="原型"></p>
-<p><font face="微软雅黑" size="3">概括： 通过阅读小红书和冴羽的合集，了解掌握原型及原型链</font><br><a id="more"></a></p>
-<h1 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h1><hr>
-<p>参考： <a href="https://github.com/mqyqingfeng/Blog/issues/2" target="_blank" rel="noopener">JavaScript深入之从原型到原型链</a>, <a href="https://github.com/mqyqingfeng/Blog/issues/2" target="_blank" rel="noopener">图片</a>,  by冴羽</p>
-<p><strong>1. 理解原型对象</strong></p>
-<p>构造函数创建新对象实例：构造函数 Person(), 用 new 构建对象实例 person<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造函数首字母大写</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'bob'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">//bob</span></span><br></pre></td></tr></table></figure></p>
+<p><font face="微软雅黑" size="3">概括： 通过阅读小红书和冴羽的合集，了解掌握原型及原型链</font><br><a id="more"></a><br>参考： <a href="https://github.com/mqyqingfeng/Blog/issues/2" target="_blank" rel="noopener">JavaScript深入之从原型到原型链</a>, <a href="https://github.com/mqyqingfeng/Blog/issues/2" target="_blank" rel="noopener">图片</a>,  by冴羽</p>
+<h2 id="理解原型对象"><a href="#理解原型对象" class="headerlink" title="理解原型对象"></a>理解原型对象</h2><p>构造函数创建新对象实例：构造函数 Person(), 用 new 构建对象实例 person<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造函数首字母大写</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'bob'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">//bob</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <ul>
 <li>每个函数都有一个 prototype 属性, 这个属性指向函数的原型对象。</li>
 <li>所有原型对象都会自动获得一个 constructor属性，这个属性包含一个指向 prototype 属性所在函数的指针</li>
 </ul>
 </blockquote>
-<p><strong>2. <strong>proto</strong></strong></p>
-<ol>
+<h2 id="proto"><a href="#proto" class="headerlink" title="proto"></a><strong>proto</strong></h2><ol>
 <li>当调用构造函数创建一个新实例后，该实例的内部将包含一个指针（内部属性），指向构造函数的原型对象。</li>
 <li><code>__proto__</code>无法访问, 可通过 isPrototypeOf()确定对象之间是否存在这种关系。</li>
 <li>Object.getPrototypeOf()方法可以取得一个对象的原型, 即返回实例<code>__proto__</code>的值。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.isPrototypeOf(person); <span class="comment">//ture</span></span><br><span class="line">Person.prototype === person.__proto__;  <span class="comment">//ture</span></span><br><span class="line"><span class="built_in">Object</span>.getPrototypeOf(person) == Person.prototype;  <span class="comment">//ture</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><img src="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype2.png" alt="__ptoto__"></p>
-<p><strong>3. constructor</strong></p>
-<p>每个原型对象都有一个 constructor 属性指向关联的构造函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.constructor === Person <span class="comment">//ture</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h2><p>每个原型对象都有一个 constructor 属性指向关联的构造函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.constructor === Person <span class="comment">//ture</span></span><br></pre></td></tr></table></figure></p>
 <p><img src="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype3.png" alt="constuctor"></p>
-<p><strong>4. 原型链(蓝色<strong>proto</strong>)</strong></p>
-<p>优先在实例对象中查找，若无，则通过原型链访问保存在原型对象(可读不可更改)。<br><img src="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype5.png" alt="原型链"></p>
+<h2 id="原型链-蓝色proto"><a href="#原型链-蓝色proto" class="headerlink" title="原型链(蓝色proto)"></a>原型链(蓝色<strong>proto</strong>)</h2><p>优先在实例对象中查找，若无，则通过原型链访问保存在原型对象(可读不可更改)。<br><img src="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype5.png" alt="原型链"></p>
 <p>判断原型和实例之间的关系</p>
 <ol>
 <li>实例 instanceof 原型:  <code>instance instanceof Object</code></li>
 <li>isPrototypeOf(): <code>Object.prototype.isPrototypeOf(instance)</code></li>
 </ol>
-<p><strong>5. 方法</strong></p>
-<ol>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol>
 <li><p>操作对象 . hasOwnProperty (‘属性’)：检测属性存在于实例?or 原型?</p>
 </li>
 <li><p>in操作符</p>
@@ -402,13 +396,14 @@
 </ol>
 <p>可通过 hasPrototypeProperty 函数判断属性存在于 实例？or 原型？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// false: 实例中的属性</span></span><br><span class="line"><span class="comment">// true: 原型中的属性</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasPrototypeProperty</span>(<span class="params">object, name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !object.hasOwnProperty(name) &amp;&amp; (name <span class="keyword">in</span> object);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>5. 更简单的原型语法： 对象字面量</strong></p>
-<ol>
-<li>本质上完全重写了默认的 prototype 对象，因此 constructor 属性也就变成了新对象的 constructor 属性（指向 Object 构造函数），不再指向 Person 函数。</li>
-<li><code>constructor : Person</code> : 可手动设置 constructor 属性指向构造函数，但会导致 [[Enumerable]]特性被设置为 true, 即construcor 属性可枚举</li>
-<li>Object.defineProperty()<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span> : Person,  </span><br><span class="line">    name : "Nicholas",</span><br><span class="line">    sayName : function () &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;; </span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person() </span><br><span class="line">per1.sayName() <span class="comment">//Nicholas</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//重设构造函数，只适用于 ECMAScript 5 兼容的浏览器, 使 constructor 不可枚举</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(Person.prototype, <span class="string">"constructor"</span>, &#123;</span><br><span class="line"> enumerable: <span class="literal">false</span>,</span><br><span class="line"> value: Person</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>重写原型对象切断了现有原型与任何之前已经存在的对象实例之间的联系；它引用的仍然是最初的原型<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person() </span><br><span class="line"><span class="comment">//重写原型对象</span></span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span> : Person,  </span><br><span class="line">    name : "Nicholas",</span><br><span class="line">    sayName : function () &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;; </span><br><span class="line">per1.sayName() <span class="comment">//error</span></span><br></pre></td></tr></table></figure></p>
+<p>在下面代码中，将 Person.prototype 设置为等于一个以对象字面量形式创建的新对象， 最终结果相同。</p>
+<p>但 constructor 属性不再指向 Person；</p>
+<p>每创建一个函数，就会同时创建它的 prototype 对象，这个对象也会自动获得 constructor 属性。而使用对象字面量，本质上完全重写了默认的 prototype 对象，因此 constructor 属性也就变成了新对象的 constructor 属性（指向 Object 构造函数），不再指向 Person 函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    name : <span class="string">"Nicholas"</span>,</span><br><span class="line">    age : <span class="number">29</span>,</span><br><span class="line">    job: <span class="string">"Software Engineer"</span>,</span><br><span class="line">    sayName : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><code>constructor : Person</code> : 可手动设置 constructor 属性指向构造函数，但会导致 [[Enumerable]]特性被设置为 true, 即construcor 属性可枚举<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span> : Person,  </span><br><span class="line">    name : "Nicholas",</span><br><span class="line">    sayName : function () &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;; </span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person() </span><br><span class="line">per1.sayName() <span class="comment">//Nicholas</span></span><br></pre></td></tr></table></figure></p>
+<p>原生的 constructor 属性是不可枚举的， 可使用 Object.defineProperty() 方法添加<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    name : <span class="string">"Nicholas"</span>,</span><br><span class="line">    sayName : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;; </span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person() </span><br><span class="line">per1.sayName() <span class="comment">//Nicholas</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//重设构造函数，只适用于 ECMAScript 5 兼容的浏览器, 使 constructor 不可枚举</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(Person.prototype, <span class="string">"constructor"</span>, &#123;</span><br><span class="line"> enumerable: <span class="literal">false</span>,</span><br><span class="line"> value: Person</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>在这个例子中，我们先创建了 Person 的一个实例，然后又重写了其原型对象。然后在调用 friend.sayName()时发生了错误，因为 friend 指向的原型中不包含以该名字命名的属性<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person() </span><br><span class="line"><span class="comment">//重写原型对象</span></span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span> : Person,  </span><br><span class="line">    name : "Nicholas",</span><br><span class="line">    sayName : function () &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;; </span><br><span class="line">per1.sayName() <span class="comment">//error</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/08/28/原型/2.jpg" alt="原型"></p>
+<p>重写原型对象切断了现有原型与任何之前已经存在的对象实例之间的联系；它引用的仍然是最初的原型</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
 <li><p>对象实例并没有constructor属性，person.constructor是顺着原型链从原型出获取了constructor属性</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">person.constructor === Person.prototype.constructor <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
@@ -437,7 +432,7 @@
   <p><span>本文标题:</span><a href="/2018/08/28/原型/">原型</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 AngellinaZ 的个人博客">AngellinaZ</a></p>
   <p><span>发布时间:</span>2018年08月28日 - 16:08</p>
-  <p><span>最后更新:</span>2018年08月29日 - 16:08</p>
+  <p><span>最后更新:</span>2018年08月31日 - 16:08</p>
   <p><span>原始链接:</span><a href="/2018/08/28/原型/" title="原型">http://yoursite.com/2018/08/28/原型/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/08/28/原型/"  aria-label="复制成功！"></i></span>
   </p>
@@ -574,7 +569,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -636,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原型对象"><span class="nav-number">1.</span> <span class="nav-text">原型对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.1.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理解原型对象"><span class="nav-number">1.</span> <span class="nav-text">理解原型对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#proto"><span class="nav-number">2.</span> <span class="nav-text">proto</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">3.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链-蓝色proto"><span class="nav-number">4.</span> <span class="nav-text">原型链(蓝色proto)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">5.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">6.</span> <span class="nav-text">注意</span></a></li></ol></div>
             
 
           </div>
