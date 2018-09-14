@@ -1280,8 +1280,7 @@ pre .javascript .function {
 }
 .posts-index article {
   width: 350px;
-  height: 400px;
-  background: rgba(255,255,255,0.7) none repeat scroll !important;
+  background: rgba(255,255,255,0.4) none repeat scroll !important;
   padding: 10px;
   margin-bottom: 20px;
 }
@@ -1907,7 +1906,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #88b8ff;
+  background: #9cdb7c;
 }
 .links-of-blogroll {
   font-size: 13px;

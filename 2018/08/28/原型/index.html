@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype3.png">
 <meta property="og:image" content="https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype5.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/28/原型/2.jpg">
-<meta property="og:updated_time" content="2018-08-31T08:35:40.831Z">
+<meta property="og:updated_time" content="2018-09-12T01:38:52.758Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型">
 <meta name="twitter:description" content="概括： 通过阅读小红书和冴羽的合集，了解掌握原型及原型链">
@@ -189,7 +189,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-homepage"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -319,7 +319,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,158
+                  1,168
                 </span>
               
 
@@ -361,7 +361,7 @@
 <h2 id="理解原型对象"><a href="#理解原型对象" class="headerlink" title="理解原型对象"></a>理解原型对象</h2><p>构造函数创建新对象实例：构造函数 Person(), 用 new 构建对象实例 person<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造函数首字母大写</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'bob'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">//bob</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <ul>
-<li>每个函数都有一个 prototype 属性, 这个属性指向函数的原型对象。</li>
+<li>每个函数都有一个 prototype 属性, 这个属性指向函数的原型对象, prototype 是函数才会有的属性。</li>
 <li>所有原型对象都会自动获得一个 constructor属性，这个属性包含一个指向 prototype 属性所在函数的指针</li>
 </ul>
 </blockquote>
@@ -432,10 +432,7 @@
   <p><span>本文标题:</span><a href="/2018/08/28/原型/">原型</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 AngellinaZ 的个人博客">AngellinaZ</a></p>
   <p><span>发布时间:</span>2018年08月28日 - 16:08</p>
-  <p><span>最后更新:</span>2018年08月31日 - 16:08</p>
-  <p><span>原始链接:</span><a href="/2018/08/28/原型/" title="原型">http://yoursite.com/2018/08/28/原型/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/08/28/原型/"  aria-label="复制成功！"></i></span>
-  </p>
+  <p><span>最后更新:</span>2018年09月12日 - 09:09</p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
 <script> 
@@ -569,7 +566,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -586,6 +583,15 @@
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
             
 
           </nav>
