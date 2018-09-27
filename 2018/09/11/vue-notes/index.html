@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="前端,vue," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="vue 难点或者容易遗忘点">
-<meta name="keywords" content="前端,vue">
+<meta name="description" content="vue 学习总结，持续跟进">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue notes">
 <meta property="og:url" content="http://yoursite.com/2018/09/11/vue-notes/index.html">
 <meta property="og:site_name" content="大鱼">
-<meta property="og:description" content="vue 难点或者容易遗忘点">
+<meta property="og:description" content="vue 学习总结，持续跟进">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/09/11/vue-notes/1.png">
-<meta property="og:updated_time" content="2018-09-21T09:21:05.472Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/11/vue-notes/1.jpg">
+<meta property="og:updated_time" content="2018-09-27T08:02:52.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue notes">
-<meta name="twitter:description" content="vue 难点或者容易遗忘点">
+<meta name="twitter:description" content="vue 学习总结，持续跟进">
 <meta name="twitter:image" content="http://yoursite.com/2018/09/11/vue-notes/1.png">
 
 
@@ -262,6 +262,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -283,7 +316,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,960
+                  2,185
                 </span>
               
 
@@ -299,7 +332,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  10
                 </span>
               
             </div>
@@ -321,7 +354,63 @@
 
       
         <p><img src="/2018/09/11/vue-notes/1.png" alt="vue-notes"></p>
-<p><font face="微软雅黑" size="3">vue 难点或者容易遗忘点</font><br><a id="more"></a></p>
+<p><font face="微软雅黑" size="3">vue 学习总结，持续跟进</font><br><a id="more"></a></p>
+<h2 id="什么是Vue"><a href="#什么是Vue" class="headerlink" title="什么是Vue"></a>什么是Vue</h2><p><img src="/2018/09/11/vue-notes/1.jpg" alt="vue-notes"></p>
+<p>Vue 不支持 IE8 及以下版本，因为 Vue 使用了 IE8 无法模拟的 ECMAScript 5 特性。但它支持所有<a href="https://caniuse.com/#feat=es5" target="_blank" rel="noopener">兼容 ECMAScript 5 的浏览器</a>。</p>
+<h2 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h2><table>
+<thead>
+<tr>
+<th>生命周期</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> beforeCreate</td>
+<td>在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用。</td>
+</tr>
+<tr>
+<td> created</td>
+<td>在实例创建完成后，属性已绑定。挂载阶段还没开始，DOM还未生成，$el 属性目前不可见。</td>
+</tr>
+<tr>
+<td> beforeMount</td>
+<td>在挂载开始之前被调用</td>
+</tr>
+<tr>
+<td> mounted</td>
+<td>模板编译挂载之后（不保证组件已在doucument中）</td>
+</tr>
+<tr>
+<td> beforeUpdate</td>
+<td>组件更新之前</td>
+</tr>
+<tr>
+<td> updated</td>
+<td>组件更新之后</td>
+</tr>
+<tr>
+<td> activated</td>
+<td>keep-alive 组件激活时调用</td>
+</tr>
+<tr>
+<td> deactivated</td>
+<td>keep-alive 组件停用时调用</td>
+</tr>
+<tr>
+<td> beforeDestroy</td>
+<td>实例销毁前调用，在这一步，实例仍然完全可用</td>
+</tr>
+<tr>
+<td> destroyed</td>
+<td>实例销毁后调用</td>
+</tr>
+<tr>
+<td> errorCaptured</td>
+<td>当捕获一个来自子孙组件的错误时被调用</td>
+</tr>
+</tbody>
+</table>
 <h2 id="注意箭头函数的使用"><a href="#注意箭头函数的使用" class="headerlink" title="注意箭头函数的使用"></a>注意箭头函数的使用</h2><p>不在选项属性或者回调上使用箭头函数，因为箭头函数是与父级作用域绑定在一起的，this指向的是最近的普通函数的作用域</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">created: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="keyword">this</span>.a); <span class="comment">//Uncaught TypeError: Cannot read property of undefined</span></span><br><span class="line">vm.$watch(<span class="string">'a'</span>, newValue =&gt; <span class="keyword">this</span>.myMethod()); <span class="comment">//Uncaught TypeError: this.myMethod is not a function</span></span><br></pre></td></tr></table></figure>
 <hr>
@@ -439,7 +528,7 @@
   <p><span>本文标题:</span><a href="/2018/09/11/vue-notes/">vue notes</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 AngellinaZ 的个人博客">AngellinaZ</a></p>
   <p><span>发布时间:</span>2018年09月11日 - 14:09</p>
-  <p><span>最后更新:</span>2018年09月21日 - 17:09</p>
+  <p><span>最后更新:</span>2018年09月27日 - 16:09</p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
 <script> 
@@ -474,14 +563,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/前端/"<i class="fa fa-tag"></i> 前端</a>
-          
-            <a href="/tags/vue/"<i class="fa fa-tag"></i> vue</a>
-          
-        </div>
       
 
       
@@ -585,7 +666,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -596,21 +677,12 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
             
 
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
             
 
           </nav>
@@ -656,7 +728,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意箭头函数的使用"><span class="nav-number">1.</span> <span class="nav-text">注意箭头函数的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算属性和侦听器"><span class="nav-number">2.</span> <span class="nav-text">计算属性和侦听器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定-HTML-Class"><span class="nav-number">3.</span> <span class="nav-text">绑定 HTML Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染"><span class="nav-number">4.</span> <span class="nav-text">条件渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表渲染"><span class="nav-number">5.</span> <span class="nav-text">列表渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件处理"><span class="nav-number">6.</span> <span class="nav-text">事件处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model修饰符"><span class="nav-number">7.</span> <span class="nav-text">v-model修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件"><span class="nav-number">8.</span> <span class="nav-text">组件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Vue"><span class="nav-number">1.</span> <span class="nav-text">什么是Vue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期钩子"><span class="nav-number">2.</span> <span class="nav-text">生命周期钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意箭头函数的使用"><span class="nav-number">3.</span> <span class="nav-text">注意箭头函数的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算属性和侦听器"><span class="nav-number">4.</span> <span class="nav-text">计算属性和侦听器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定-HTML-Class"><span class="nav-number">5.</span> <span class="nav-text">绑定 HTML Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染"><span class="nav-number">6.</span> <span class="nav-text">条件渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表渲染"><span class="nav-number">7.</span> <span class="nav-text">列表渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件处理"><span class="nav-number">8.</span> <span class="nav-text">事件处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-model修饰符"><span class="nav-number">9.</span> <span class="nav-text">v-model修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件"><span class="nav-number">10.</span> <span class="nav-text">组件</span></a></li></ol></div>
             
 
           </div>
