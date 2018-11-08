@@ -87,7 +87,7 @@
 <meta property="og:description" content="Echarts 使用过程中遇到的问题，以及解决方法">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/10/17/something-about-Echarts/0.jpg">
-<meta property="og:updated_time" content="2018-11-01T06:36:49.793Z">
+<meta property="og:updated_time" content="2018-11-01T06:44:14.315Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="something about Echarts">
 <meta name="twitter:description" content="Echarts 使用过程中遇到的问题，以及解决方法">
@@ -315,7 +315,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  199
+                  401
                 </span>
               
 
@@ -331,7 +331,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -356,7 +356,7 @@
 <p><font face="微软雅黑" size="3">Echarts 使用过程中遇到的问题，以及解决方法</font><br><a id="more"></a></p>
 <h2 id="echarts-调整图表-位置-的方法"><a href="#echarts-调整图表-位置-的方法" class="headerlink" title="echarts 调整图表 位置 的方法"></a>echarts 调整图表 位置 的方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;  </span><br><span class="line">	grid:&#123;</span><br><span class="line">		x:<span class="number">25</span>, <span class="comment">//'10%'</span></span><br><span class="line">		y:<span class="number">45</span>,</span><br><span class="line">		x2:<span class="number">5</span>,</span><br><span class="line">		y2:<span class="number">20</span>,</span><br><span class="line">		borderWidth:<span class="number">1</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="echarts-横屏展示"><a href="#echarts-横屏展示" class="headerlink" title="echarts 横屏展示"></a>echarts 横屏展示</h2><p><a href="https://blog.csdn.net/qq_40594137/article/details/80896631" target="_blank" rel="noopener">van久</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">option = &#123;</span><br><span class="line">    tooltip : &#123;</span><br><span class="line">        trigger: <span class="string">'axis'</span>,</span><br><span class="line">        extraCssText:<span class="string">'transform: rotate(90deg)'</span></span><br><span class="line">    &#125;,    </span><br><span class="line">    xAxis: &#123;</span><br><span class="line">        type: <span class="string">'value'</span>, <span class="comment">//数据</span></span><br><span class="line">        position :<span class="string">'top'</span>, <span class="comment">//x 轴的位置【top bottom】</span></span><br><span class="line">        nameRotate :<span class="number">-90</span>, <span class="comment">//坐标轴名字旋转，角度值。</span></span><br><span class="line">        axisLabel :&#123;  <span class="comment">//坐标轴刻度标签的相关设置。   </span></span><br><span class="line">           rotate : <span class="number">90</span> <span class="comment">//刻度标签旋转的角度，</span></span><br><span class="line">        &#125;,</span><br><span class="line">        scale: <span class="literal">true</span>, <span class="comment">//是否是脱离 0 值比例</span></span><br><span class="line">    &#125;,</span><br><span class="line">    yAxis: &#123;</span><br><span class="line">        type: <span class="string">'category'</span>,</span><br><span class="line">        data: [<span class="string">'Mon'</span>, <span class="string">'Tue'</span>, <span class="string">'Wed'</span>, <span class="string">'Thu'</span>, <span class="string">'Fri'</span>, <span class="string">'Sat'</span>, <span class="string">'Sun'</span>],</span><br><span class="line">        inverse :<span class="string">'true'</span>, <span class="comment">//是否是反向坐标轴。</span></span><br><span class="line">        axisLabel :&#123;</span><br><span class="line">            rotate : <span class="number">-90</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    series: [&#123;</span><br><span class="line">        data: [<span class="number">820</span>, <span class="number">932</span>, <span class="number">901</span>, <span class="number">934</span>, <span class="number">1290</span>, <span class="number">1330</span>, <span class="number">1320</span>],</span><br><span class="line">        type: <span class="string">'line'</span>,</span><br><span class="line">        smooth: <span class="literal">true</span> <span class="comment">//是否平滑曲线显示</span></span><br><span class="line">    &#125;]</span><br></pre></td></tr></table></figure></p>
-
+<h2 id="ecahrts-样式修改为简洁版"><a href="#ecahrts-样式修改为简洁版" class="headerlink" title="ecahrts 样式修改为简洁版"></a>ecahrts 样式修改为简洁版</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">yAxis: &#123;</span><br><span class="line">    type: <span class="string">'value'</span>,</span><br><span class="line">    axisTick: &#123; <span class="comment">// 坐标轴小标记</span></span><br><span class="line">        show: <span class="literal">false</span>, <span class="comment">// 属性show控制显示与否，默认不显示</span></span><br><span class="line">    &#125;,</span><br><span class="line">    splitLine: &#123;</span><br><span class="line">        show: <span class="literal">true</span>,</span><br><span class="line">        lineStyle: &#123; <span class="comment">// 属性lineStyle（详见lineStyle）控制线条样式</span></span><br><span class="line">            color: <span class="string">'#d9d9d9'</span>,</span><br><span class="line">            type: <span class="string">'dashed'</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    axisLine: &#123; <span class="comment">// 坐标轴线</span></span><br><span class="line">        show: <span class="literal">false</span>,</span><br><span class="line">        lineStyle: &#123; <span class="comment">// 属性lineStyle（详见lineStyle）控制线条样式</span></span><br><span class="line">            type: <span class="string">'dashed'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    axisLabel: &#123; <span class="comment">// 坐标轴文本标签，详见axis.axisLabel</span></span><br><span class="line">        show: <span class="literal">true</span>,</span><br><span class="line">        color: <span class="string">'#666'</span>,</span><br><span class="line">        fontSize: <span class="number">10</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    name: <span class="string">'次数'</span>,</span><br><span class="line">&#125;,</span><br><span class="line">xAxis: &#123;</span><br><span class="line">    axisLine: &#123;</span><br><span class="line">        lineStyle: &#123; <span class="comment">// 属性lineStyle（详见lineStyle）控制线条样式</span></span><br><span class="line">            color: <span class="string">'#d9d9d9'</span>,</span><br><span class="line">            type: <span class="string">'dashed'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    axisTick: &#123; <span class="comment">// 坐标轴小标记</span></span><br><span class="line">        show: <span class="literal">false</span>, <span class="comment">// 属性show控制显示与否，默认不显示</span></span><br><span class="line">    &#125;,</span><br><span class="line">    axisLabel: &#123; <span class="comment">// 坐标轴文本标签，详见axis.axisLabel</span></span><br><span class="line">        color: <span class="string">'#666'</span>,</span><br><span class="line">        fontSize: <span class="number">10</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    type: <span class="string">'category'</span>,</span><br><span class="line">    data: data</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -431,6 +431,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/06/偏函数-柯里化-Compose-和-Pipe/" rel="prev" title="偏函数, 柯里化, Compose 和 Pipe">
+                偏函数, 柯里化, Compose 和 Pipe <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -511,7 +515,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -573,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts-调整图表-位置-的方法"><span class="nav-number">1.</span> <span class="nav-text">echarts 调整图表 位置 的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts-横屏展示"><span class="nav-number">2.</span> <span class="nav-text">echarts 横屏展示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts-调整图表-位置-的方法"><span class="nav-number">1.</span> <span class="nav-text">echarts 调整图表 位置 的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts-横屏展示"><span class="nav-number">2.</span> <span class="nav-text">echarts 横屏展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ecahrts-样式修改为简洁版"><span class="nav-number">3.</span> <span class="nav-text">ecahrts 样式修改为简洁版</span></a></li></ol></div>
             
 
           </div>
