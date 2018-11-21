@@ -79,19 +79,20 @@
 
 
 
-<meta name="description" content="Echarts 使用过程中遇到的问题，以及解决方法">
+<meta name="description" content="简介：介绍 URL 和 URI的区别，以及 URI 编码解码和 base64">
 <meta property="og:type" content="article">
-<meta property="og:title" content="something about Echarts">
-<meta property="og:url" content="http://yoursite.com/2018/10/17/something-about-Echarts/index.html">
+<meta property="og:title" content="URL 和 URI">
+<meta property="og:url" content="http://yoursite.com/2018/11/07/URL-和-URI/index.html">
 <meta property="og:site_name" content="大鱼">
-<meta property="og:description" content="Echarts 使用过程中遇到的问题，以及解决方法">
+<meta property="og:description" content="简介：介绍 URL 和 URI的区别，以及 URI 编码解码和 base64">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/10/17/something-about-Echarts/0.jpg">
-<meta property="og:updated_time" content="2018-11-01T06:44:14.315Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/07/URL-和-URI/0.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/07/URL-和-URI/1.png">
+<meta property="og:updated_time" content="2018-11-07T01:44:35.039Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="something about Echarts">
-<meta name="twitter:description" content="Echarts 使用过程中遇到的问题，以及解决方法">
-<meta name="twitter:image" content="http://yoursite.com/2018/10/17/something-about-Echarts/0.jpg">
+<meta name="twitter:title" content="URL 和 URI">
+<meta name="twitter:description" content="简介：介绍 URL 和 URI的区别，以及 URI 编码解码和 base64">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/07/URL-和-URI/0.png">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/17/something-about-Echarts/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/07/URL-和-URI/"/>
 
 
 
 
 
-  <title>something about Echarts | 大鱼</title>
+  <title>URL 和 URI | 大鱼</title>
   
 
 
@@ -238,7 +239,7 @@
       <header class="post-header">
         
         
-          <h1 class="post-title" itemprop="name headline">something about Echarts</h1>
+          <h1 class="post-title" itemprop="name headline">URL 和 URI</h1>
         
 
         <div class="post-meta">
@@ -250,8 +251,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-17T08:45:47+08:00">
-                2018-10-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-07T09:30:32+08:00">
+                2018-11-07
               </time>
             
 
@@ -284,8 +285,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/ECharts/" itemprop="url" rel="index">
-                    <span itemprop="name">ECharts</span>
+                  <a href="/categories/前端/javaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript</span>
                   </a>
                 </span>
 
@@ -315,7 +316,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  401
+                  600
                 </span>
               
 
@@ -352,11 +353,32 @@
       
 
       
-        <p><img src="/2018/10/17/something-about-Echarts/0.jpg" alt="something-about-Echarts"></p>
-<p><font face="微软雅黑" size="3">Echarts 使用过程中遇到的问题，以及解决方法</font><br><a id="more"></a></p>
-<h2 id="echarts-调整图表-位置-的方法"><a href="#echarts-调整图表-位置-的方法" class="headerlink" title="echarts 调整图表 位置 的方法"></a>echarts 调整图表 位置 的方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;  </span><br><span class="line">	grid:&#123;</span><br><span class="line">		x:<span class="number">25</span>, <span class="comment">//'10%'</span></span><br><span class="line">		y:<span class="number">45</span>,</span><br><span class="line">		x2:<span class="number">5</span>,</span><br><span class="line">		y2:<span class="number">20</span>,</span><br><span class="line">		borderWidth:<span class="number">1</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="echarts-横屏展示"><a href="#echarts-横屏展示" class="headerlink" title="echarts 横屏展示"></a>echarts 横屏展示</h2><p><a href="https://blog.csdn.net/qq_40594137/article/details/80896631" target="_blank" rel="noopener">van久</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">option = &#123;</span><br><span class="line">    tooltip : &#123;</span><br><span class="line">        trigger: <span class="string">'axis'</span>,</span><br><span class="line">        extraCssText:<span class="string">'transform: rotate(90deg)'</span></span><br><span class="line">    &#125;,    </span><br><span class="line">    xAxis: &#123;</span><br><span class="line">        type: <span class="string">'value'</span>, <span class="comment">//数据</span></span><br><span class="line">        position :<span class="string">'top'</span>, <span class="comment">//x 轴的位置【top bottom】</span></span><br><span class="line">        nameRotate :<span class="number">-90</span>, <span class="comment">//坐标轴名字旋转，角度值。</span></span><br><span class="line">        axisLabel :&#123;  <span class="comment">//坐标轴刻度标签的相关设置。   </span></span><br><span class="line">           rotate : <span class="number">90</span> <span class="comment">//刻度标签旋转的角度，</span></span><br><span class="line">        &#125;,</span><br><span class="line">        scale: <span class="literal">true</span>, <span class="comment">//是否是脱离 0 值比例</span></span><br><span class="line">    &#125;,</span><br><span class="line">    yAxis: &#123;</span><br><span class="line">        type: <span class="string">'category'</span>,</span><br><span class="line">        data: [<span class="string">'Mon'</span>, <span class="string">'Tue'</span>, <span class="string">'Wed'</span>, <span class="string">'Thu'</span>, <span class="string">'Fri'</span>, <span class="string">'Sat'</span>, <span class="string">'Sun'</span>],</span><br><span class="line">        inverse :<span class="string">'true'</span>, <span class="comment">//是否是反向坐标轴。</span></span><br><span class="line">        axisLabel :&#123;</span><br><span class="line">            rotate : <span class="number">-90</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    series: [&#123;</span><br><span class="line">        data: [<span class="number">820</span>, <span class="number">932</span>, <span class="number">901</span>, <span class="number">934</span>, <span class="number">1290</span>, <span class="number">1330</span>, <span class="number">1320</span>],</span><br><span class="line">        type: <span class="string">'line'</span>,</span><br><span class="line">        smooth: <span class="literal">true</span> <span class="comment">//是否平滑曲线显示</span></span><br><span class="line">    &#125;]</span><br></pre></td></tr></table></figure></p>
-<h2 id="ecahrts-样式修改为简洁版"><a href="#ecahrts-样式修改为简洁版" class="headerlink" title="ecahrts 样式修改为简洁版"></a>ecahrts 样式修改为简洁版</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">yAxis: &#123;</span><br><span class="line">    type: <span class="string">'value'</span>,</span><br><span class="line">    axisTick: &#123; <span class="comment">// 坐标轴小标记</span></span><br><span class="line">        show: <span class="literal">false</span>, <span class="comment">// 属性show控制显示与否，默认不显示</span></span><br><span class="line">    &#125;,</span><br><span class="line">    splitLine: &#123;</span><br><span class="line">        show: <span class="literal">true</span>,</span><br><span class="line">        lineStyle: &#123; <span class="comment">// 属性lineStyle（详见lineStyle）控制线条样式</span></span><br><span class="line">            color: <span class="string">'#d9d9d9'</span>,</span><br><span class="line">            type: <span class="string">'dashed'</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    axisLine: &#123; <span class="comment">// 坐标轴线</span></span><br><span class="line">        show: <span class="literal">false</span>,</span><br><span class="line">        lineStyle: &#123; <span class="comment">// 属性lineStyle（详见lineStyle）控制线条样式</span></span><br><span class="line">            type: <span class="string">'dashed'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    axisLabel: &#123; <span class="comment">// 坐标轴文本标签，详见axis.axisLabel</span></span><br><span class="line">        show: <span class="literal">true</span>,</span><br><span class="line">        color: <span class="string">'#666'</span>,</span><br><span class="line">        fontSize: <span class="number">10</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    name: <span class="string">'次数'</span>,</span><br><span class="line">&#125;,</span><br><span class="line">xAxis: &#123;</span><br><span class="line">    axisLine: &#123;</span><br><span class="line">        lineStyle: &#123; <span class="comment">// 属性lineStyle（详见lineStyle）控制线条样式</span></span><br><span class="line">            color: <span class="string">'#d9d9d9'</span>,</span><br><span class="line">            type: <span class="string">'dashed'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    axisTick: &#123; <span class="comment">// 坐标轴小标记</span></span><br><span class="line">        show: <span class="literal">false</span>, <span class="comment">// 属性show控制显示与否，默认不显示</span></span><br><span class="line">    &#125;,</span><br><span class="line">    axisLabel: &#123; <span class="comment">// 坐标轴文本标签，详见axis.axisLabel</span></span><br><span class="line">        color: <span class="string">'#666'</span>,</span><br><span class="line">        fontSize: <span class="number">10</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    type: <span class="string">'category'</span>,</span><br><span class="line">    data: data</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/11/07/URL-和-URI/0.png" alt="URL-和-URI"></p>
+<p><font face="微软雅黑" size="3">简介：介绍 URL 和 URI的区别，以及 URI 编码解码和 base64</font><br><a id="more"></a></p>
+<h2 id="URL-和-URI-区别"><a href="#URL-和-URI-区别" class="headerlink" title="URL 和 URI 区别"></a>URL 和 URI 区别</h2><p><img src="/2018/11/07/URL-和-URI/1.png" alt="URL-和-URI"></p>
+<p>维基百科 </p>
+<blockquote>
+<p>URI可以分为URL,URN或同时具备locators 和names特性的一个东西。URN作用就好像一个人的名字，URL就像一个人的地址。换句话说：URN确定了东西的身份，URL提供了找到它的方式。</p>
+</blockquote>
+<p>URI: Uniform Resource Identifier，是一个紧凑的字符串用来标示抽象或物理资源，标记了一个网络资源。’说白了就是确定某一东西的身份，是什么?’</p>
+<p>URL: Uniform Resource Locator，标记了一个WWW互联网资源（用地址标记），并给出了他的访问地址。 ‘这个东西在哪里’</p>
+<hr>
+<h2 id="URI编码解码和base64"><a href="#URI编码解码和base64" class="headerlink" title="URI编码解码和base64"></a>URI编码解码和base64</h2><p><strong>URI编码解码</strong></p>
+<ul>
+<li><p>escape（69个）：*/@+-._0-9a-zA-Z<br>返回一个字符的Unicode编码值，对应的解码函数 unescape()，不提倡使用。<br>注意：escape()不对”+”编码。但是网页在提交表单的时候，如果有空格，则会被转化为+字符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">escape</span>(<span class="string">'春节'</span>); </span><br><span class="line"><span class="comment">//"%u6625%u8282"</span></span><br><span class="line"><span class="comment">//在Unicode字符集中，"春"是第6625个（十六进制）字符，"节"是第8282个（十六进制）字符。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>encodeURI（82个）：!#$&amp;’()*+,/:;=?@-._~0-9a-zA-Z<br>对 URL编码，对应的解码函数decodeURI()。<br>注意：它不对单引号’编码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">encodeURI</span>(<span class="string">'春节'</span>);</span><br><span class="line"><span class="comment">//"%E6%98%A5%E8%8A%82"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>encodeURIComponent（71个）：!’()*-._~0-9a-zA-Z<br>与encodeURI()的区别是，它用于对URL的组成部分进行个别编码，而不用于对整个URL进行编码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">encodeURI</span>(<span class="string">'http://www.baidu.com?key=春节'</span>)</span><br><span class="line"><span class="string">"http://www.baidu.com?key=%E6%98%A5%E8%8A%82"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">encodeURIComponent</span>(<span class="string">'http://www.baidu.com?key=春节'</span>)</span><br><span class="line"><span class="string">"http%3A%2F%2Fwww.baidu.com%3Fkey%3D%E6%98%A5%E8%8A%82"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>base64</strong><br><a href="https://zh.wikipedia.org/wiki/Base64" target="_blank" rel="noopener">Base64</a>是一种基于64个可打印字符来表示二进制数据的表示方法。编码规则是每3个8位字节为一组，分成4组6位字节，并且每个字节的高位补零，形成4个8位的字节。</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WindowBase64/btoa" target="_blank" rel="noopener">window.btoa()</a> 从 String 对象中创建一个 base-64 编码的 ASCII 字符串，其中字符串中的每个字符都被视为一个二进制数据字节。</p>
+<p>Unicode 字符<br>先把Unicode字符串转换为UTF-8编码,可以解决这个问题, 代码来自于<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WindowBase64/btoa" target="_blank" rel="noopener">MDN</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">utf8_to_b64</span>(<span class="params"> str </span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">window</span>.btoa(<span class="built_in">unescape</span>(<span class="built_in">encodeURIComponent</span>( str )));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// window.atob 的方法对接受到的base64数据进行解码</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b64_to_utf8</span>(<span class="params"> str </span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">decodeURIComponent</span>(<span class="built_in">escape</span>(<span class="built_in">window</span>.atob( str )));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -374,10 +396,10 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/10/17/something-about-Echarts/">something about Echarts</a></p>
+  <p><span>本文标题:</span><a href="/2018/11/07/URL-和-URI/">URL 和 URI</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 AngellinaZ 的个人博客">AngellinaZ</a></p>
-  <p><span>发布时间:</span>2018年10月17日 - 08:10</p>
-  <p><span>最后更新:</span>2018年11月01日 - 14:11</p>
+  <p><span>发布时间:</span>2018年11月07日 - 09:11</p>
+  <p><span>最后更新:</span>2018年11月07日 - 09:11</p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
 <script> 
@@ -422,8 +444,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/16/the-bugs-about-VUE/" rel="next" title="the bugs about VUE">
-                <i class="fa fa-chevron-left"></i> the bugs about VUE
+              <a href="/2018/11/06/DOM/" rel="next" title="DOM">
+                <i class="fa fa-chevron-left"></i> DOM
               </a>
             
           </div>
@@ -432,8 +454,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/06/偏函数-柯里化-Compose-和-Pipe/" rel="prev" title="偏函数, 柯里化, Compose 和 Pipe">
-                偏函数, 柯里化, Compose 和 Pipe <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/07/表格转excel格式/" rel="prev" title="表格转excel格式">
+                表格转excel格式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -586,7 +608,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts-调整图表-位置-的方法"><span class="nav-number">1.</span> <span class="nav-text">echarts 调整图表 位置 的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts-横屏展示"><span class="nav-number">2.</span> <span class="nav-text">echarts 横屏展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ecahrts-样式修改为简洁版"><span class="nav-number">3.</span> <span class="nav-text">ecahrts 样式修改为简洁版</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#URL-和-URI-区别"><span class="nav-number">1.</span> <span class="nav-text">URL 和 URI 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URI编码解码和base64"><span class="nav-number">2.</span> <span class="nav-text">URI编码解码和base64</span></a></li></ol></div>
             
 
           </div>
