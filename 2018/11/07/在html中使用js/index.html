@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="简介：介绍在html中使用javascript">
+<meta name="description" content="简介：第二章，介绍在html中使用javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在html中使用js">
 <meta property="og:url" content="http://yoursite.com/2018/11/07/在html中使用js/index.html">
 <meta property="og:site_name" content="大鱼">
-<meta property="og:description" content="简介：介绍在html中使用javascript">
+<meta property="og:description" content="简介：第二章，介绍在html中使用javascript">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/11/07/在html中使用js/0.png">
-<meta property="og:updated_time" content="2018-11-07T02:51:04.501Z">
+<meta property="og:updated_time" content="2018-11-21T02:32:10.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在html中使用js">
-<meta name="twitter:description" content="简介：介绍在html中使用javascript">
+<meta name="twitter:description" content="简介：第二章，介绍在html中使用javascript">
 <meta name="twitter:image" content="http://yoursite.com/2018/11/07/在html中使用js/0.png">
 
 
@@ -315,7 +315,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  453
+                  456
                 </span>
               
 
@@ -353,10 +353,10 @@
 
       
         <p><img src="/2018/11/07/在html中使用js/0.png" alt="在html中使用js"></p>
-<p><font face="微软雅黑" size="3">简介：介绍在html中使用javascript</font> </p>
+<p><font face="微软雅黑" size="3">简介：第二章，介绍在html中使用javascript</font> </p>
 <a id="more"></a>   
 <hr>
-<p>##sctipt 元素<br><code>&lt;script&gt;</code>标签用于向HTML中插入 Javascript 代码；</p>
+<h2 id="sctipt-元素"><a href="#sctipt-元素" class="headerlink" title="sctipt 元素"></a>sctipt 元素</h2><p><code>&lt;script&gt;</code>标签用于向HTML中插入 Javascript 代码；</p>
 <ol>
 <li>属性</li>
 </ol>
@@ -378,13 +378,13 @@
 <ol start="3">
 <li>异步脚本<br>标记为 async 的脚本并不保证按照指定它们的先后顺序执行，所以确保脚本之间不互相依赖非常重要；<br>async 属性的目的是不让页面等待两个脚本下载和执行，从而异步加载页面其他内容。建议异步脚本不要在加载期间修改 DOM；<br>异步脚本一定会在页面的 load 事件前执行，但可能会在 DOMContentLoaded 事件触发之前或之后执行。</li>
 </ol>
-<p>##文档模式<br>文档模式的概念通过使用文档类型 doctype 切换实现。</p>
+<h2 id="文档模式"><a href="#文档模式" class="headerlink" title="文档模式"></a>文档模式</h2><p>文档模式的概念通过使用文档类型 doctype 切换实现。</p>
 <ol>
 <li>混杂模式：会让 IE 的行为与（包含非标准特性的）IE5 相同；</li>
 <li>标准模式：让 IE 的行为更接近标准行为</li>
 </ol>
 <p>两种模式主要影响 CSS 内容的呈现</p>
-<p>##noscript元素<br><code>&lt;noscript&gt;</code>元素用于当浏览器不支持 JavaScript 时如何让页面平稳地退化；<br>包含在<code>&lt;noscript&gt;</code>元素中的内容只有在下列情况下才会显示出来：</p>
+<h2 id="noscript元素"><a href="#noscript元素" class="headerlink" title="noscript元素"></a>noscript元素</h2><p><code>&lt;noscript&gt;</code>元素用于当浏览器不支持 JavaScript 时如何让页面平稳地退化；<br>包含在<code>&lt;noscript&gt;</code>元素中的内容只有在下列情况下才会显示出来：</p>
 <ul>
 <li>浏览器不支持脚本；</li>
 <li>浏览器支持脚本，但脚本被禁用。</li>
@@ -410,7 +410,7 @@
   <p><span>本文标题:</span><a href="/2018/11/07/在html中使用js/">在html中使用js</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 AngellinaZ 的个人博客">AngellinaZ</a></p>
   <p><span>发布时间:</span>2018年11月07日 - 10:11</p>
-  <p><span>最后更新:</span>2018年11月07日 - 10:11</p>
+  <p><span>最后更新:</span>2018年11月21日 - 10:11</p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
 <script> 
@@ -465,6 +465,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/11/21/基本概念/" rel="prev" title="基本概念">
+                基本概念 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -515,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -535,7 +548,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -596,6 +609,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sctipt-元素"><span class="nav-number">1.</span> <span class="nav-text">sctipt 元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档模式"><span class="nav-number">2.</span> <span class="nav-text">文档模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#noscript元素"><span class="nav-number">3.</span> <span class="nav-text">noscript元素</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
