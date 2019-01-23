@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -87,7 +87,10 @@
 <meta property="og:description" content="使用 vue 时遇到的困难，以及解决方法">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/10/16/the-bugs-about-VUE/0.jpg">
-<meta property="og:updated_time" content="2018-11-01T06:33:21.456Z">
+<meta property="og:image" content="http://yoursite.com/2018/10/16/the-bugs-about-VUE/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/16/the-bugs-about-VUE/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/16/the-bugs-about-VUE/1.jpg">
+<meta property="og:updated_time" content="2019-01-22T09:59:14.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="the bugs about VUE">
 <meta name="twitter:description" content="使用 vue 时遇到的困难，以及解决方法">
@@ -99,7 +102,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -315,7 +318,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  132
+                  783
                 </span>
               
 
@@ -331,7 +334,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -354,19 +357,48 @@
       
         <p><img src="/2018/10/16/the-bugs-about-VUE/0.jpg" alt="the-bugs-about-VUE"></p>
 <p><font face="微软雅黑" size="3">使用 vue 时遇到的困难，以及解决方法</font><br><a id="more"></a></p>
+<h2 id="打包时生成-map-文件"><a href="#打包时生成-map-文件" class="headerlink" title="打包时生成 .map 文件"></a>打包时生成 .map 文件</h2><p>.map 文件用来定位打包后的代码运行发生错误时的 bug 位置。 但生产环境部署时不需要 .map 文件。</p>
+<p>在 config/index.js 文件中设置以下参数为false，就不会生成 .map文件。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">productionSourceMap: <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="在页面中使用-setInterval-后切换页面后重复请求的问题"><a href="#在页面中使用-setInterval-后切换页面后重复请求的问题" class="headerlink" title="在页面中使用 setInterval 后切换页面后重复请求的问题"></a>在页面中使用 setInterval 后切换页面后重复请求的问题</h2><p>在 a 页面中有一个 5s 访问一次的定时器，切换到 b 页面时，a 页面中的定时器仍然间隔 5s 访问一次。</p>
+<ol>
+<li><p>方法1<br> 定义一个定时器；</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var timer;</span><br></pre></td></tr></table></figure>
+<p> 使用定时器；</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">timer = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    ... <span class="comment">//do something</span></span><br><span class="line">&#125;, <span class="number">5000</span>)</span><br></pre></td></tr></table></figure>
+<p> 最后在 beforeDestroy() 生命周期内清除定时器；</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">beforeDestroy() &#123;</span><br><span class="line">    clearInterval(timer);</span><br><span class="line">    timer = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 方案1有两点不好的地方，引用尤大的话来说就是：</p>
+<ul>
+<li>它需要在这个组件实例中保存这个timer，如果可以的话最好只有生命周期钩子可以访问到它。这并不算严重的问题，但是它可以被视为杂物。</li>
+<li>我们的建立代码独立于我们的清理代码，这使得我们比较难于程序化的清理我们建立的所有东西。</li>
+</ul>
+</li>
+<li><p>方法2<br>通过 $once 事件侦听器 , <a href="https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E7%A8%8B%E5%BA%8F%E5%8C%96%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BE%A6%E5%90%AC%E5%99%A8" target="_blank" rel="noopener">程序化的事件侦听器</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> timer = setInterval(<span class="function"><span class="params">()</span> =&gt;</span>&#123;                    </span><br><span class="line">    <span class="comment">// 某些定时器操作                </span></span><br><span class="line">&#125;, <span class="number">500</span>);            </span><br><span class="line"><span class="comment">// 通过$once来监听定时器，在beforeDestroy钩子可以被清除。</span></span><br><span class="line"><span class="keyword">this</span>.$once(<span class="string">'hook:beforeDestroy'</span>, () =&gt; &#123;            </span><br><span class="line">    clearInterval(timer);                                    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="打包之后文件、图片、背景图资源不存在或者路径错误的问题"><a href="#打包之后文件、图片、背景图资源不存在或者路径错误的问题" class="headerlink" title="打包之后文件、图片、背景图资源不存在或者路径错误的问题"></a>打包之后文件、图片、背景图资源不存在或者路径错误的问题</h2><p>如下图，项目中的 config 文件夹下的 index.js 中的配置项用于打包后的资源公共路径，默认<code>assetsPublicPath: &#39;/&#39;</code>, 即根目录，所打包后的资源路径为根目录下的<code>assetsfile</code>，一般打包后的代码都需要放在服务器上部署，如果没有放在服务器的根目录上，而是放在根目录下的 xxx 文件夹下，会导致路径冲突，资源找不到。</p>
+<p><img src="/2018/10/16/the-bugs-about-VUE/3.jpg" alt="the-bugs-about-VUE"></p>
+<p>所以，为了解决这个问题，建议将绝对路径<code>assetsPublicPath: &#39;/&#39;</code>更改为相对路径<code>assetsPublicPath: &#39;./&#39;</code>。这样，打包后的 js, css, img 都是<code>./assetsfile/js</code>相对路径。 </p>
+<p><img src="/2018/10/16/the-bugs-about-VUE/2.jpg" alt="the-bugs-about-VUE"></p>
+<p>But !!!</p>
+<p>css内的背景图片路径是不对的，依据渲染的路径是找不到图片的，把css中的背景图的加个公共路径‘../../’，即让他往上返回两级到和index.html文件同级的位置。因为背景图是通过loader解析的，所以自然在loader的配置中修改，打开build文件夹下的utils文件，找到exports.cssLoaders的函数。</p>
+<p><img src="/2018/10/16/the-bugs-about-VUE/1.jpg" alt="the-bugs-about-VUE"></p>
+<hr>
 <h2 id="vue-打包时，丢失-css-hack"><a href="#vue-打包时，丢失-css-hack" class="headerlink" title="vue 打包时，丢失 css hack"></a>vue 打包时，丢失 css hack</h2><ol>
 <li><p>找到 build /webpack.prod.conf.js，注释下面这一段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* new OptimizeCSSPlugin(&#123;</span><br><span class="line">  cssProcessorOptions: config.build.productionSourceMap</span><br><span class="line">    ? &#123; safe: true, map: &#123; inline: false &#125; &#125;</span><br><span class="line">    : &#123; safe: true &#125;</span><br><span class="line">&#125;), */</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> OptimizeCSSPlugin(&#123;</span><br><span class="line">  cssProcessorOptions: config.build.productionSourceMap</span><br><span class="line">    ? &#123; <span class="attr">safe</span>: <span class="literal">true</span>, <span class="attr">map</span>: &#123; <span class="attr">inline</span>: <span class="literal">false</span> &#125; &#125;</span><br><span class="line">    : &#123; <span class="attr">safe</span>: <span class="literal">true</span> &#125;</span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在build/utils.js里加入 minimize: true，压缩css</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const cssLoader = &#123;</span><br><span class="line">    loader: &apos;css-loader&apos;,</span><br><span class="line">    options: &#123;</span><br><span class="line">        sourceMap: options.sourceMap,</span><br><span class="line">        minimize: true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cssLoader = &#123;</span><br><span class="line">    loader: <span class="string">'css-loader'</span>,</span><br><span class="line">    options: &#123;</span><br><span class="line">        sourceMap: options.sourceMap,</span><br><span class="line">        minimize: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<hr>
 <h2 id="vue-刷新组件"><a href="#vue-刷新组件" class="headerlink" title="vue 刷新组件"></a>vue 刷新组件</h2><ol>
-<li>hack 的方式来强制子组件刷新, <code>v-if</code>会销毁并重建组件<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">component</span> <span class="attr">v-if</span>=<span class="string">"hackReset"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li>hack 的方式来强制子组件刷新, <code>v-if</code>会销毁并重建组件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;component v-if=&quot;hackReset&quot;&gt;&lt;/component&gt;</span><br><span class="line"></span><br><span class="line">this.hackReset = false</span><br><span class="line">    this.$nextTick(() =&gt; &#123;</span><br><span class="line">    this.hackReset = true</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.hackReset = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.hackReset = <span class="literal">true</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -387,7 +419,7 @@
   <p><span>本文标题:</span><a href="/2018/10/16/the-bugs-about-VUE/">the bugs about VUE</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 AngellinaZ 的个人博客">AngellinaZ</a></p>
   <p><span>发布时间:</span>2018年10月16日 - 14:10</p>
-  <p><span>最后更新:</span>2018年11月01日 - 14:11</p>
+  <p><span>最后更新:</span>2019年01月22日 - 17:01</p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
 <script> 
@@ -596,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-打包时，丢失-css-hack"><span class="nav-number">1.</span> <span class="nav-text">vue 打包时，丢失 css hack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-刷新组件"><span class="nav-number">2.</span> <span class="nav-text">vue 刷新组件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#打包时生成-map-文件"><span class="nav-number">1.</span> <span class="nav-text">打包时生成 .map 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在页面中使用-setInterval-后切换页面后重复请求的问题"><span class="nav-number">2.</span> <span class="nav-text">在页面中使用 setInterval 后切换页面后重复请求的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打包之后文件、图片、背景图资源不存在或者路径错误的问题"><span class="nav-number">3.</span> <span class="nav-text">打包之后文件、图片、背景图资源不存在或者路径错误的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-打包时，丢失-css-hack"><span class="nav-number">4.</span> <span class="nav-text">vue 打包时，丢失 css hack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-刷新组件"><span class="nav-number">5.</span> <span class="nav-text">vue 刷新组件</span></a></li></ol></div>
             
 
           </div>
@@ -634,7 +666,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -733,13 +765,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
