@@ -79,20 +79,17 @@
 
 
 
-<meta name="description" content="简介：介绍 URL 和 URI的区别，以及 URI 编码解码和 base64">
+<meta name="description" content="哪些类型可以作为对象的键名呢？常见的字符串？还是数字，函数都可以？如果不可以会如何转换呢？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="URL 和 URI">
-<meta property="og:url" content="http://yoursite.com/2018/11/07/URL-和-URI/index.html">
+<meta property="og:title" content="JavaScript中对象键名的转换">
+<meta property="og:url" content="http://yoursite.com/2019/06/05/JavaScript中对象键名的转换/index.html">
 <meta property="og:site_name" content="大鱼">
-<meta property="og:description" content="简介：介绍 URL 和 URI的区别，以及 URI 编码解码和 base64">
+<meta property="og:description" content="哪些类型可以作为对象的键名呢？常见的字符串？还是数字，函数都可以？如果不可以会如何转换呢？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/11/07/URL-和-URI/0.png">
-<meta property="og:image" content="http://yoursite.com/2018/11/07/URL-和-URI/1.png">
-<meta property="og:updated_time" content="2019-01-23T08:42:21.831Z">
+<meta property="og:updated_time" content="2019-06-05T01:32:39.992Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="URL 和 URI">
-<meta name="twitter:description" content="简介：介绍 URL 和 URI的区别，以及 URI 编码解码和 base64">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/07/URL-和-URI/0.png">
+<meta name="twitter:title" content="JavaScript中对象键名的转换">
+<meta name="twitter:description" content="哪些类型可以作为对象的键名呢？常见的字符串？还是数字，函数都可以？如果不可以会如何转换呢？">
 
 
 
@@ -122,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/07/URL-和-URI/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/05/JavaScript中对象键名的转换/">
 
 
 
 
 
-  <title>URL 和 URI | 大鱼</title>
+  <title>JavaScript中对象键名的转换 | 大鱼</title>
   
 
 
@@ -239,7 +236,7 @@
       <header class="post-header">
         
         
-          <h1 class="post-title" itemprop="name headline">URL 和 URI</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript中对象键名的转换</h1>
         
 
         <div class="post-meta">
@@ -251,8 +248,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-07T09:30:32+08:00">
-                2018-11-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-05T09:21:06+08:00">
+                2019-06-05
               </time>
             
 
@@ -285,8 +282,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
+                  <a href="/categories/前端/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -303,8 +300,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/07/URL-和-URI/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/11/07/URL-和-URI/" itemprop="commentsCount"></span>
+                <a href="/2019/06/05/JavaScript中对象键名的转换/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/06/05/JavaScript中对象键名的转换/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -312,7 +309,7 @@
 
           
           
-             <span id="/2018/11/07/URL-和-URI/" class="leancloud_visitors" data-flag-title="URL 和 URI">
+             <span id="/2019/06/05/JavaScript中对象键名的转换/" class="leancloud_visitors" data-flag-title="JavaScript中对象键名的转换">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -339,7 +336,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  600
+                  338
                 </span>
               
 
@@ -364,31 +361,15 @@
       
 
       
-        <p><img src="/2018/11/07/URL-和-URI/0.png" alt="URL-和-URI"></p>
-<p><font face="微软雅黑" size="3">简介：介绍 URL 和 URI的区别，以及 URI 编码解码和 base64</font><br><a id="more"></a></p>
-<h2 id="URL-和-URI-区别"><a href="#URL-和-URI-区别" class="headerlink" title="URL 和 URI 区别"></a>URL 和 URI 区别</h2><p><img src="/2018/11/07/URL-和-URI/1.png" alt="URL-和-URI"></p>
-<p>维基百科 </p>
-<blockquote>
-<p>URI可以分为URL,URN或同时具备locators 和names特性的一个东西。URN作用就好像一个人的名字，URL就像一个人的地址。换句话说：URN确定了东西的身份，URL提供了找到它的方式。</p>
-</blockquote>
-<p>URI: Uniform Resource Identifier，是一个紧凑的字符串用来标示抽象或物理资源，标记了一个网络资源。’说白了就是确定某一东西的身份，是什么?’</p>
-<p>URL: Uniform Resource Locator，标记了一个WWW互联网资源（用地址标记），并给出了他的访问地址。 ‘这个东西在哪里’</p>
-<hr>
-<h2 id="URI编码解码和base64"><a href="#URI编码解码和base64" class="headerlink" title="URI编码解码和base64"></a>URI编码解码和base64</h2><p><strong>URI编码解码</strong></p>
-<ul>
-<li><p>escape（69个）：*/@+-._0-9a-zA-Z<br>返回一个字符的Unicode编码值，对应的解码函数 unescape()，不提倡使用。<br>注意：escape()不对”+”编码。但是网页在提交表单的时候，如果有空格，则会被转化为+字符</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">escape</span>(<span class="string">'春节'</span>); </span><br><span class="line"><span class="comment">//"%u6625%u8282"</span></span><br><span class="line"><span class="comment">//在Unicode字符集中，"春"是第6625个（十六进制）字符，"节"是第8282个（十六进制）字符。</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>encodeURI（82个）：!#$&amp;’()*+,/:;=?@-._~0-9a-zA-Z<br>对 URL编码，对应的解码函数decodeURI()。<br>注意：它不对单引号’编码。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">encodeURI</span>(<span class="string">'春节'</span>);</span><br><span class="line"><span class="comment">//"%E6%98%A5%E8%8A%82"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>encodeURIComponent（71个）：!’()*-._~0-9a-zA-Z<br>与encodeURI()的区别是，它用于对URL的组成部分进行个别编码，而不用于对整个URL进行编码。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">encodeURI</span>(<span class="string">'http://www.baidu.com?key=春节'</span>)</span><br><span class="line"><span class="string">"http://www.baidu.com?key=%E6%98%A5%E8%8A%82"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">encodeURIComponent</span>(<span class="string">'http://www.baidu.com?key=春节'</span>)</span><br><span class="line"><span class="string">"http%3A%2F%2Fwww.baidu.com%3Fkey%3D%E6%98%A5%E8%8A%82"</span></span><br></pre></td></tr></table></figure>
-</li>
+        <p><font face="微软雅黑" size="3">哪些类型可以作为对象的键名呢？常见的字符串？还是数字，函数都可以？如果不可以会如何转换呢？</font><br><a id="more"></a></p>
+<h3 id="对象键名的转换"><a href="#对象键名的转换" class="headerlink" title="对象键名的转换"></a>对象键名的转换</h3><ul>
+<li>对象的键名只能是<u><strong>字符串和Symbol类型</strong></u></li>
+<li>其它类型的键名会被转换成字符串类型</li>
+<li>对象转字符串默认会调用 toString 方法</li>
 </ul>
-<p><strong>base64</strong><br><a href="https://zh.wikipedia.org/wiki/Base64" target="_blank" rel="noopener">Base64</a>是一种基于64个可打印字符来表示二进制数据的表示方法。编码规则是每3个8位字节为一组，分成4组6位字节，并且每个字节的高位补零，形成4个8位的字节。</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WindowBase64/btoa" target="_blank" rel="noopener">window.btoa()</a> 从 String 对象中创建一个 base-64 编码的 ASCII 字符串，其中字符串中的每个字符都被视为一个二进制数据字节。</p>
-<p>Unicode 字符<br>先把Unicode字符串转换为UTF-8编码,可以解决这个问题, 代码来自于<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WindowBase64/btoa" target="_blank" rel="noopener">MDN</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">utf8_to_b64</span>(<span class="params"> str </span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">window</span>.btoa(<span class="built_in">unescape</span>(<span class="built_in">encodeURIComponent</span>( str )));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// window.atob 的方法对接受到的base64数据进行解码</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b64_to_utf8</span>(<span class="params"> str </span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">decodeURIComponent</span>(<span class="built_in">escape</span>(<span class="built_in">window</span>.atob( str )));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>栗子1：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;, b = <span class="string">'123'</span>, c = <span class="number">123</span>;</span><br><span class="line">a[b] = <span class="string">'b'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// c 的键名会被转换成字符串‘123’，会覆盖掉 b</span></span><br><span class="line">a[c] = <span class="string">'c'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出 c</span></span><br><span class="line"><span class="built_in">console</span>.log(a[b])</span><br></pre></td></tr></table></figure></p>
+<p><strong>栗子2</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;, b = <span class="built_in">Symbol</span>(<span class="string">'123'</span>), c = <span class="built_in">Symbol</span>(<span class="string">'123'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// b 是 Symbol 类型，不需要转换</span></span><br><span class="line">a[b] = <span class="string">'b'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// c 是 Symbol 类型，不需要转换。任何一个 Symbol 类型的值都是不相等的，所以不会覆盖掉 b。</span></span><br><span class="line">a[c] = <span class="string">'c'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出 b</span></span><br><span class="line"><span class="built_in">console</span>.log(a[b])</span><br></pre></td></tr></table></figure></p>
+<p><strong>栗子3</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=&#123;&#125;, b=&#123;<span class="attr">key</span>:<span class="string">'123'</span>&#125;, c=&#123;<span class="attr">key</span>:<span class="string">'456'</span>&#125;;  </span><br><span class="line"></span><br><span class="line"><span class="comment">// b 不是字符串也不是 Symbol 类型，需要转换成字符串。</span></span><br><span class="line"><span class="comment">// 对象类型会调用 toString 方法转换成字符串 [object Object]。</span></span><br><span class="line">a[b]=<span class="string">'b'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// c 不是字符串也不是 Symbol 类型，需要转换成字符串。</span></span><br><span class="line"><span class="comment">// 对象类型会调用 toString 方法转换成字符串 [object Object]。这里会把 b 覆盖掉。</span></span><br><span class="line">a[c]=<span class="string">'c'</span>;  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出 c</span></span><br><span class="line"><span class="built_in">console</span>.log(a[b]);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -407,10 +388,10 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/11/07/URL-和-URI/">URL 和 URI</a></p>
+  <p><span>本文标题:</span><a href="/2019/06/05/JavaScript中对象键名的转换/">JavaScript中对象键名的转换</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 AngellinaZ 的个人博客">AngellinaZ</a></p>
-  <p><span>发布时间:</span>2018年11月07日 - 09:11</p>
-  <p><span>最后更新:</span>2019年01月23日 - 16:01</p>
+  <p><span>发布时间:</span>2019年06月05日 - 09:06</p>
+  <p><span>最后更新:</span>2019年06月05日 - 09:06</p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
 <script> 
@@ -455,8 +436,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/17/something-about-Echarts/" rel="next" title="something about Echarts">
-                <i class="fa fa-chevron-left"></i> something about Echarts
+              <a href="/2019/01/28/vue项目打包生成可配置文件/" rel="next" title="vue项目打包生成可配置文件">
+                <i class="fa fa-chevron-left"></i> vue项目打包生成可配置文件
               </a>
             
           </div>
@@ -465,8 +446,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/07/表格转excel格式/" rel="prev" title="表格转excel格式">
-                表格转excel格式 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/05/浅拷贝，深拷贝/" rel="prev" title="浅拷贝，深拷贝">
+                浅拷贝，深拷贝 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -615,7 +596,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#URL-和-URI-区别"><span class="nav-number">1.</span> <span class="nav-text">URL 和 URI 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URI编码解码和base64"><span class="nav-number">2.</span> <span class="nav-text">URI编码解码和base64</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象键名的转换"><span class="nav-number">1.</span> <span class="nav-text">对象键名的转换</span></a></li></ol></div>
             
 
           </div>
@@ -808,7 +789,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: '1541554232000', 
+            id: '1559697666000', 
             owner: '23134353',
             repo: 'https://github.com/AngellinaZ/AngellinaZ.github.io',
             
